@@ -25,13 +25,13 @@ const registerSchema = {
     },
     "firstName": {
       "type": "string",
-      "minLength": 1,
+      "minLength": 2,
       "maxLength": 30,
       "errorMessage" : "First name must be between 1 and 30 characters long"
     },
     "lastName": {
       "type": "string",
-      "minLength": 1,
+      "minLength": 2,
       "maxLength": 30,
       "errorMessage" : "Last name must be between 1 and 30 characters long"
     },

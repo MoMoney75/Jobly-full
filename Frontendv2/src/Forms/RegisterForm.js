@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
-
+import { useNavigate } from 'react-router-dom';
 function RegisterForm({register}){
+    const [errors, setErrors] = useState(null);
+    const navigate = useNavigate();
     const INITIAL_STATE = {
         username : "",
         password : "",
@@ -12,8 +14,16 @@ function RegisterForm({register}){
   
      async function handleSubmit(evt){
         evt.preventDefault();
-        await register(formData);
+        const result = await register(formData);
+        console.log("result:", result);
+        if(result.success === false){
+            console.log(result.err)
+            setErrors(result.err)
+            setFormData(INITIAL_STATE)
+            return;
+        }
         setFormData(INITIAL_STATE)
+        navigate('/companies')
 
     }
 
@@ -29,6 +39,9 @@ return(
     <h1>Join today for free!</h1>
     <div>
 <form onSubmit={handleSubmit}>
+
+{errors && errors.map(e => <p>{e} </p>)}
+
 
 <input name='username'
 type='text'
