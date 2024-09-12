@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/backend/node_modules
+/Frontendv2/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+/Frontendv2/.DS_Store
+/Frontendv2/.env.local
+/Frontendv2/.env.development.local
+Frontendv2/.env.test.local
+/Frontendv2/.env.production.local
+
+/Frontendv2/npm-debug.log*
+/Frontendv2/yarn-debug.log*
+/Frontendv2/yarn-error.log*

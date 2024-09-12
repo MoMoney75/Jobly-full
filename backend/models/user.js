@@ -46,7 +46,7 @@ class User {
       }
     }
 
-    throw new UnauthorizedError("Invalid username/password");
+    throw new UnauthorizedError("Invalid username or password");
   }
 
   /** Register user with data.
