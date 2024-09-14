@@ -8,56 +8,65 @@ const { currentUser } = useContext(UserContext);
 
 function loggedInNav(){
   return(
-<div className="loggedIn-NavBar">
-
+<div className="navbar navbar-expand-lg bg-body-tertiary">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#">Jobly</a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul>
-      <li>
+      <li className="nav-link" aria-current="page">
         <Link className="Link" to="/">Home</Link>
       </li>
-      <li>
+      <li className="nav-link" aria-current="page">
         <Link className="Link" to="/companies">Companies</Link>
       </li>
-      <li>
+      <li className="nav-link" aria-current="page">
         <Link className="Link" to="/jobs">Jobs</Link>
       </li>
 
-      <li>
+      <li className="nav-link" aria-current="page">
         <Link className="Link" to="/settings">Profile</Link>
       </li>
 
-    <li>
+    <li className="nav-link" aria-current="page">
       <Link className="Link" to="/" onClick={logout}>Logout {currentUser.username}</Link>
     </li>
     </ul>
-
+      </div>
+    </div>
   </div>
   )}
 
   function loggedOutNav(){
     return(
-      <div className="loggedout-NavBar">
-
-        <ul>
-          <li>
-            <Link className="Link" to='/login'>Login</Link>
+      <div className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container-fluid">
+      <a className="navbar-brand" href="#">Jobly</a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-link active" aria-current="page">
+            <Link className="nav-link" to='/'>Login</Link>
           </li>
 
-          <li>
-            <Link className="Link" to='/register'>Signup</Link>
+          <li className="nav-link">
+            <Link className="nav-link" aria-current="page"to='/register'>Sign up</Link>
           </li>
         </ul>
-
+      </div>
+      </div>
       </div>
     )
   }
 
   return (
-    <nav>
-      <Link id="Jobly" to="/">
-        Jobly
-      </Link>
+    <div>
       {currentUser ? loggedInNav() : loggedOutNav()}
-    </nav>
+    </div>
 );
 }
 export default Navbar;

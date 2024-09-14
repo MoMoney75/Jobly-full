@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+require('./register.css')
+
 function RegisterForm({register}){
     const [errors, setErrors] = useState(null);
     const navigate = useNavigate();
@@ -35,58 +37,86 @@ function RegisterForm({register}){
 
 
 return(
-<div>
-    <h1>Join today for free!</h1>
+<div className='container' id='reg-div'>
     <div>
+    <h1 className='h5'>Join today for free!</h1>
+    </div>
 <form onSubmit={handleSubmit}>
 
-{errors && errors.map(e => <p>{e} </p>)}
+<div id='error-div'>
+{errors && errors.map(e => <ul><li> {e} </li> </ul>)}
+</div>
 
-
-<input name='username'
+<div className='mb-3'>
+<label htmlFor="username" className="form-label"></label>
+<input 
+className='form-control'
+name='username'
 type='text'
 id='username'
 value={formData.username}
 onChange={handleChange}
 placeholder='username'>
 </input>
+</div>
 
-<input name='password'
+<div className='mb-3'>
+<label htmlFor="password" className="form-label"></label>
+<input 
+className='form-control'
+name='password'
 id='password'
 type='password'
 value={formData.password}
 onChange={handleChange}
 placeholder='password'>
 </input>
+</div>
 
+<div className='mb-3'>
+<label htmlFor="firstName" className="form-label"></label>
 <input
+className='form-control'
 name='firstName'
 id='firstName'
 type='text'
 value={formData.firstName}
 onChange={handleChange}
-placeholder='First Name'
-></input>
+placeholder='First Name'>
 
-<input name='lastName'
+</input>
+</div>
+
+<div className='mb-3'>
+<label htmlFor="lastName" className="form-label"></label>
+<input 
+className='form-control'
+name='lastName'
 id='lastName'
 type='text'
 value={formData.lastName}
 onChange={handleChange}
 placeholder='Last Name'>
 </input>
+</div>
 
-<input name='email'
+<div className='mb-3'>
+<label htmlFor="email" className="form-label"></label>
+<input 
+className='form-control'
+name='email'
 id='email'
 type='text'
 value={formData.email}
 onChange={handleChange}
 placeholder='Email'>
 </input>
-<button>submit</button>
+</div>
+<button className='btn btn-primary'>Submit</button>
 </form>
+
 </div>
-</div>
+
 
 )
 }

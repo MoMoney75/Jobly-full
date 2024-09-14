@@ -14,7 +14,8 @@ function LoginForm({login}){
     async function handleSubmit(evt){
         evt.preventDefault();
         let result = await login(formData)
-        if(result.success){
+        console.log("RESULT LOGIN:", result)
+        if(result.success === true){
         navigate('/companies')
         }
         else{
@@ -28,29 +29,33 @@ function LoginForm({login}){
     }
 
     return (
-        <div>
-        <div>
-            <h1>Welcome to Jobly!</h1>
-        </div>
-        <div className="form-div">
+
+        <div className="container" id="login-div">
+            <h1 className="h5">Please login to continue</h1>
         <form onSubmit={handleSubmit}>
-        <p>Please login or create a new account to continue</p>
 
-        <div className="input">
-
-        <label htmlFor="username ">username:</label>
-        <input name="username"
+        <div id='error-div'>
+            {formErrors && formErrors.map(e => <ul><li> {e} </li> </ul>)}
+            </div>
+        <div className="mb-3">
+            <label className="form-label" htmlFor="username "></label>
+            <input 
+               className="form-control"
+               name="username"
                id="username"
                type="text"
                onChange={handleChange}
                value={formData.username}
                placeholder="username">
-        </input>
+            </input>
+
         </div>
 
-        <div className="input">
-        <label htmlFor="password">password:</label>
-        <input name="password"
+        <div className="mb-3">
+        <label  className="form-label" htmlFor="password"></label>
+        <input 
+               className="form-control"
+               name="password"
                id="password"
                type="password"
                onChange={handleChange}
@@ -60,13 +65,11 @@ function LoginForm({login}){
         </div>
         
 
-        {formErrors.length ? <p>{formErrors}</p> : null}
-        <button>Login</button>
+        
+        <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         </div>
 
-
-        </div>
     )
 
 }

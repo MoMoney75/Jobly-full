@@ -1,13 +1,12 @@
 import React from "react"
 import './Home.css'
+import LoginForm from '../Forms/LoginForm';
 function Home(){
 
     return(
     
     <div id="home-div">
-        <h1>Welcome to Jobly</h1>
-        <h2>Finding a job made easy!</h2>
-
+        <LoginForm />
     </div>
     )
 }

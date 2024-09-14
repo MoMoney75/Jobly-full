@@ -1,11 +1,12 @@
 import React, {useState,useEffect} from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter} from 'react-router-dom';
 import Navbar from '../Routes/Navbar';
 import Skeleton from '../Routes/Routes';
 import JoblyApi from '../API/JoblyAPI';
 import { jwtDecode } from 'jwt-decode'
 import useLocalStorage from '../Hooks/hooks';
 import UserContext from '../Context/UserContext';
+
 import './App.css'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const TOKEN_STORAGE_ID = "jobly-token";
   const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
-  
+
   
   async function register(signupData){
         try{
@@ -90,6 +91,7 @@ function App() {
       <UserContext.Provider
             value={{ currentUser, setCurrentUser, hasAppliedToJob, applyToJob}}>
             <Navbar logout={logout}/>
+            <h1 className="h4">Welcome to Jobly</h1>
             <Skeleton login={login} register={register} />
       </UserContext.Provider>
       </BrowserRouter>
