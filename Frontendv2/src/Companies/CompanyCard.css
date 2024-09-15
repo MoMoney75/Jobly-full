@@ -1,22 +1,23 @@
-#jobs-list{
+#company-div{
     display: flex;
+    margin: auto;
     flex-direction: column;
-flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-#job-application > ul > li{
-    font-size: 0.6em;
-    margin-top:  0.1em;
+.card{
+    width: 100%;
+    margin-bottom: 2em;
 }
 
-#job-application > ul > li >li{
-    margin-top: 0px;
-}
+#company-main{
+    display: flex;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-#job-application > ul{
-    margin-top: 0px;
-}
-
-h5{
-    margin-top: 0.5em;
 }

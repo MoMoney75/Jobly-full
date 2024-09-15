@@ -17,11 +17,14 @@ const handleSubmit = (evt) => {
 }
 
     return(
-        <div id="searchForm">
+        <div className="container-fluid">
            
-            <form onSubmit={handleSubmit}>
+            <form className="d-flex" role="search"onSubmit={handleSubmit}>
 
                     <input 
+                        className="form-control me-2"
+                        aria-label="Search"
+                        type="search"
                         name="searchTerm"
                         id="searchTerm"
                         placeholder="Search..."
@@ -30,10 +33,9 @@ const handleSubmit = (evt) => {
 
                     </input>
 
-                    <button>submit</button>
+                    <button className="btn btn-outline-success" type="submit ">Search</button>
             </form>
-            
-
+        
         </div>
     )
 }

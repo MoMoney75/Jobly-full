@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import JoblyApi from "../API/JoblyAPI";
 import SearchForm from "../Forms/SearchForm";
 import CompaniesCard from "./CompaniesCard";
+import { Link } from "react-router-dom";
 
 
 function CompaniesList() {
@@ -15,6 +16,7 @@ function CompaniesList() {
         try{
         let companies = await JoblyApi.getCompanies(name);
         if(companies.length > 0){
+        console.log("companies list:", companies)
         setCompanies(companies);}
         else{return}
         }
@@ -29,9 +31,20 @@ function CompaniesList() {
     <div id="searchForm">
     <SearchForm searchFor={searchCompanies}/>
     </div>
-    <div>
-    <CompaniesCard companies={companies}/>
-    </div>
+
+      {companies && companies.map(company => (
+        <div className="row"> 
+          <div className="col-sm-6 mb-3 mb-sm-0"> 
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{company.name}</h5>
+                <p className="card-text"> {company.description}</p>
+                <Link className="btn btn-primary"to={`/companies/${company.handle}`}> View company</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

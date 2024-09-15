@@ -28,33 +28,38 @@ function CompanyCard({ companyData, isHidden }) {
   }
 
   return (
-    <div>
-      <h1>{companyData.name}</h1>
+  <div id="company-div" className="container-fluid">
+    <div className="row">
+      <div className="col-12">
+            <div className="card" id="company-main">
+              <div className="card-body">
+              <h2 className="card-title">{companyData.name}</h2>
+              <p className="card-text">{companyData.description}</p>
+              <p className="card-text"> Total employees: {companyData.numEmployees}</p>
+          </div>
+        </div>
 
-      <p>{companyData.description}</p>
-      <p>Employees: {companyData.numEmployees}</p>
+    </div>
       <div id="jobs-list">
-        <h2>Available jobs:</h2>
-        <ol>
           {companyData.jobs.map((j) => (
-            <li key={j.id}>
-              <h5>{j.title}</h5>
-              <div id='job-application'>
-              <ul style={isHidden === true ? { visibility: "hidden" } : null}>
-                {j.salary === null? <li>Salary not available</li> : <li>Salary: ${j.salary}</li>}
-                {j.equity === null? <li>Equity not available</li> : <li>Equity: {j.equity}</li> }
-                <button onClick={() => handleApply(j.id)} disabled={hasAppliedToJob(j.id)}>
-                  {appliedJobs.find((job) => job.id === j.id)?.applied
-                    ? "Applied"
-                    : "APPLY NOW!"}
-                </button>
-              </ul>
-              </div>
-            </li>
-          ))}
-        </ol>
+            <div className="card">
+              <div className="card-header"> {j.title}</div>
+                <div className="card-body"> 
+
+                  {j.salary === null ? 
+                    <h5 className="card-title"> Salary not available </h5> : <h5 className="card-title"> Salary: ${j.salary} </h5> }
+
+                  {j.equity === null ? <p className="card-text">Equity not available</p> : <p className="card-text">Equity: {j.equity}</p>}
+
+                  <button className="btn btn-primary" onClick={() => handleApply(j.id)} disabled={hasAppliedToJob(j.id)}>
+                    {appliedJobs.find((job) => job.id === j.id)?.applied
+                      ? "Applied" : "Submit application"}
+                  </button>
+                </div>
+            </div> ))}
       </div>
     </div>
+  </div>
   );
 }
 

@@ -91,7 +91,7 @@ function App() {
       <UserContext.Provider
             value={{ currentUser, setCurrentUser, hasAppliedToJob, applyToJob}}>
             <Navbar logout={logout}/>
-            <h1 className="h4">Welcome to Jobly</h1>
+            <h1 className="h1" id='jobly-logo'>Jobly</h1>
             <Skeleton login={login} register={register} />
       </UserContext.Provider>
       </BrowserRouter>

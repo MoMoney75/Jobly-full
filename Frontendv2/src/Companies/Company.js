@@ -5,10 +5,10 @@ import CompanyCard from "./CompanyCard";
 function CompanyDetails(){
 const {company} = useParams();
 const [companyData, setCompanyData] = useState(null)
-const [isHidden, setIsHidden] = useState(true)
-const toggleHidden = () =>{
-    setIsHidden(!isHidden)
-}
+// const [isHidden, setIsHidden] = useState(true)
+// const toggleHidden = () =>{
+//     setIsHidden(!isHidden)
+// }
 
 useEffect(() => {
     const getData = async()=> {
@@ -30,10 +30,7 @@ if (!companyData) {
 
     return(
         <div>
-            <CompanyCard companyData={companyData}  isHidden={isHidden}/>
-            <button onClick={toggleHidden}>
-                {isHidden === true ? "show job details" : "hide job details"}
-            </button>
+            <CompanyCard companyData={companyData}/>
         </div>
     )
 }

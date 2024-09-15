@@ -1,25 +1,25 @@
 import React from "react"
 import { Link } from "react-router-dom"
 function JobsCard({jobs}){
+  console.log("all jobs:", jobs)
 
     return(
         <div>
-    <ol>
-    {jobs && jobs.map(j => (
-      <div key={j.id}>
-        <li>
-          <Link to={`/jobs/${j.id}`} state={{j}}><h4>{j.title}</h4> </Link>
-          {j.salary === null ? 
-            <p>Salary not available</p>
-          :
-          
-            <p>Salary: ${j.salary}</p>
-          }
 
-        </li>
-      </div>
+    {jobs && jobs.map(j => (
+
+        <div className="row"> 
+          <div className="col-sm-6 mb-3 mb-sm-0"> 
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{j.title}</h5>
+                <p className="card-text"> {j.companyName}</p>
+                <Link className="btn btn-primary"to={`/jobs/${j.id}`}> View job</Link>
+              </div>
+            </div>
+          </div>
+        </div>
     ))}
-    </ol>
     </div>
     )
 }

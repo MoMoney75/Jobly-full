@@ -5,3 +5,9 @@ html {
 body {
   min-height: 100%;
 }
+
+#jobly-logo{
+  margin-top: 1em;
+  background-color: lightgray;
+
+}
