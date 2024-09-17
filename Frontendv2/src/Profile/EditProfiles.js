@@ -57,61 +57,72 @@ function ProfileForm() {
   }
 
   return (
-      <div>
-
-        <h3>Edit Profile</h3>
-
-
-            <div>
+      <div className="container">
+        <div>
+        <h1 className="h5">Edit Profile</h1>
+        </div>
             <form id="edit-form">
-
-                <label>First Name</label>
+              <div className="mb-3">
+                <label htmlFor="firstName" className="form-label">First Name</label>
                 <input
+                    className="form-control"
                     name="firstName"
+                    type="text"
+                    id="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
+                    placeholder="First name"
                 />
+                </div>
 
-
-
-                <label>Last Name</label>
+                <div className="mb-3">
+                <label htmlFor="lastName" className="form-label">Last Name</label>
                 <input
+                    className="form-control"
                     name="lastName"
+                    type="text"
+                    id="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
+                    placeholder="Last name"
                 />
+                </div>
 
-
-
-
-                <label>Email</label>
+                <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
                 <input
+                    className="form-control"
                     name="email"
+                    type="email"
+                    id="email"
                     value={formData.email}
                     onChange={handleChange}
+                    placeholder="Email"
                 />
+                </div>
 
-
-
-                <label>Confirm password to make changes:</label>
+                <div className="mb-3">
+                <label htmlFor="password" className="form-label">Confirm password</label>
                 <input
+                    className="form-control"
                     type="password"
+                    id="password"
                     name="password"
                     value={formData.password}
                     onChange={handleChange}/>
-
+                </div>
 
               {formErrors.length
                   ? <p>{formErrors}</p> : null}
 
               {saveConfirmed ? <p>updated successfull</p> : null}
 
-              <button onClick={handleSubmit}>
-                Save Changes
+              <button className="btn btn-primary" onClick={handleSubmit}>
+                Save changes
               </button>
             </form>
             </div>
-      </div>
+
   );
 }
 

@@ -13,8 +13,8 @@ import Home from "../Home/Home";
 function Skeleton({login, register, applyToJob}){
     return (
         <Routes>
-              {/* <Route path="/" element={<Home/>} /> */}
-              <Route path="/" element={<LoginForm login={login} />} />
+              <Route path="/" element={<Home login={login}/>} /> 
+              
               <Route path="/register" element={<RegisterForm register={register} />} />
         
               <Route path="/companies"  element={
