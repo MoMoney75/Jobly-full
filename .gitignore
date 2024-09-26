@@ -22,3 +22,5 @@ Frontendv2/.env.test.local
 /Frontendv2/npm-debug.log*
 /Frontendv2/yarn-debug.log*
 /Frontendv2/yarn-error.log*
+
+.DS_Store
