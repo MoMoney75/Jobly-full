@@ -1,17 +1,18 @@
     #login-div {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        height: 50vh; /* Make it full viewport height */
         width: 100%;
+        margin-top: 5em;
       }
 
       .container {
         width: 100%;
         padding: 20px;
-        background-color: #f8f9fa; /* Optional background color */
-        border-radius: 10px; /* Optional rounded corners */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        background-color: #f8f9fa; 
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
       }
       
       form {
@@ -19,12 +20,20 @@
       }
       
       form > button {
-        width: 100%; /* Full width button */
+        width: 100%;
+
       }
 
+
 #errors-div{
-        background-color:#f5364f ;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color:#f5364f ;
+  padding: 0;
+}
+
 
 
 

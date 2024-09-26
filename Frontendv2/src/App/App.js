@@ -1,15 +1,15 @@
 import React, {useState,useEffect} from 'react';
-import { BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Navbar from '../Routes/Navbar';
 import Skeleton from '../Routes/Routes';
 import JoblyApi from '../API/JoblyAPI';
 import { jwtDecode } from 'jwt-decode'
 import useLocalStorage from '../Hooks/hooks';
 import UserContext from '../Context/UserContext';
-
 import './App.css'
 
 function App() {
+  // eslint-disable-next-line
   const [infoLoaded, setInfoLoaded] = useState(false);
   const [applicationIds, setApplicationIds] = useState(new Set([]));
   const [currentUser, setCurrentUser] = useState(null);
@@ -89,9 +89,9 @@ function App() {
     <div>
       <BrowserRouter>
       <UserContext.Provider
-            value={{ currentUser, setCurrentUser, hasAppliedToJob, applyToJob}}>
+            value={{ currentUser, setCurrentUser, hasAppliedToJob, applyToJob }}>
             <Navbar logout={logout}/>
-            <h1 className="h1" id='jobly-logo'>Jobly</h1>
+  
             <Skeleton login={login} register={register} />
       </UserContext.Provider>
       </BrowserRouter>

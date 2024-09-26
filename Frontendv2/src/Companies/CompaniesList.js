@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react";
 import JoblyApi from "../API/JoblyAPI";
 import SearchForm from "../Forms/SearchForm";
-import CompaniesCard from "./CompaniesCard";
+//import CompaniesCard from "./CompaniesCard";
+import './CompaniesList.css'
 import { Link } from "react-router-dom";
 
 
 function CompaniesList() {
     const [companies, setCompanies] = useState(null)
+    const [message, setMessage] = useState(null)
     useEffect(function getCompaniesOnMount() {
         console.debug("CompanyList useEffect getCompaniesOnMount");
         searchCompanies();
@@ -18,10 +20,13 @@ function CompaniesList() {
         if(companies.length > 0){
         console.log("companies list:", companies)
         setCompanies(companies);}
-        else{return}
+        else{
+          setMessage("No matches found, Please try searching for a different company")
+        }
         }
 
         catch(e){
+          setMessage("Unable to search for companies, please try again ")
             console.log("ERROR!!:", e)
         }
       }
@@ -32,6 +37,11 @@ function CompaniesList() {
     <SearchForm searchFor={searchCompanies}/>
     </div>
 
+    <div className="page-header">
+      <h1 className="h3">Browse by company</h1>
+      </div> 
+      {message && message.length > 0 ? <p id="message">{message} </p>: null}
+<div id="all-companies">
       {companies && companies.map(company => (
         <div className="row"> 
           <div className="col-sm-6 mb-3 mb-sm-0"> 
@@ -44,8 +54,10 @@ function CompaniesList() {
             </div>
           </div>
         </div>
+      
       ))}
     </div>
+  </div>
   );
 }
 

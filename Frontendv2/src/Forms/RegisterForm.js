@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-require('./register.css')
+import './register.css'
 
 function RegisterForm({register}){
     const [errors, setErrors] = useState(null);
@@ -38,16 +38,18 @@ function RegisterForm({register}){
 
 return(
 <div className='container' id='reg-div'>
+
     <div>
-    <h1 className='h5'>Join today for free!</h1>
+        <h1 className='h5'>Join today for free!</h1>
     </div>
-<form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
 
-<div id='error-div'>
-{errors && errors.map(e => <ul><li> {e} </li> </ul>)}
-</div>
+            <div id='error-div'>
+             {errors && errors.map(e => <ul><li> {e} </li> </ul>)}
+            </div>
 
-<div className='mb-3'>
+    <div className='mb-3'>
+
 <label htmlFor="username" className="form-label"></label>
 <input 
 className='form-control'
@@ -56,7 +58,7 @@ type='text'
 id='username'
 value={formData.username}
 onChange={handleChange}
-placeholder='username'>
+placeholder='Username'>
 </input>
 </div>
 
@@ -69,7 +71,7 @@ id='password'
 type='password'
 value={formData.password}
 onChange={handleChange}
-placeholder='password'>
+placeholder='Password'>
 </input>
 </div>
 
@@ -112,7 +114,7 @@ onChange={handleChange}
 placeholder='Email'>
 </input>
 </div>
-<button className='btn btn-primary'>Submit</button>
+<button type="submit" className='btn btn-primary'>Submit</button>
 </form>
 
 </div>

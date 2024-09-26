@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import UserContext from "../Context/UserContext";
 import './CompanyCard.css'
 
-function CompanyCard({ companyData, isHidden }) {
+function CompanyCard({ companyData}) {
   const { hasAppliedToJob, applyToJob } = useContext(UserContext);
   const [appliedJobs, setAppliedJobs] = useState([]);
 

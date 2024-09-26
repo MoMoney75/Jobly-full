@@ -9,7 +9,7 @@ function LoginForm({login}){
         password : ""
     }
     const [formData, setFormData] = useState(INITIAL_STATE)
-    const [formErrors, setFormErrors] = useState([])
+    const [formErrors, setFormErrors] = useState(null)
 
     async function handleSubmit(evt){
         evt.preventDefault();
@@ -31,11 +31,14 @@ function LoginForm({login}){
     return (
 
         <div className="container" id="login-div">
-            <h1 className="h5">Please login to continue</h1>
+            <div>
+                <h1 className="h5">Please login to continue</h1>
+            </div>
+
         <form onSubmit={handleSubmit}>
 
-        <div id='error-div'>
-            {formErrors && formErrors.map(e => <ul><li> {e} </li> </ul>)}
+        <div id='errors-div'>
+            {formErrors && formErrors.map(e => <ul><li>{e}</li></ul>)}
             </div>
         <div className="mb-3">
             <label className="form-label" htmlFor="username "></label>
@@ -46,7 +49,7 @@ function LoginForm({login}){
                type="text"
                onChange={handleChange}
                value={formData.username}
-               placeholder="username">
+               placeholder="Username">
             </input>
 
         </div>
@@ -60,7 +63,7 @@ function LoginForm({login}){
                type="password"
                onChange={handleChange}
                value={formData.password}
-               placeholder="password">
+               placeholder="Password">
         </input>
         </div>
         

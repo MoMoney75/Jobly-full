@@ -4,12 +4,7 @@ import JoblyApi from "../API/JoblyAPI";
 import CompanyCard from "./CompanyCard";
 function CompanyDetails(){
 const {company} = useParams();
-const [companyData, setCompanyData] = useState(null)
-// const [isHidden, setIsHidden] = useState(true)
-// const toggleHidden = () =>{
-//     setIsHidden(!isHidden)
-// }
-
+const [companyData, setCompanyData] = useState(null);
 useEffect(() => {
     const getData = async()=> {
         try{
@@ -19,6 +14,7 @@ useEffect(() => {
         }
         catch(e){
             console.log("Error wile trying to get company data :",e)
+            return e;
         }
     }
     getData();

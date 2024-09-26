@@ -17,9 +17,8 @@ const handleSubmit = (evt) => {
 }
 
     return(
-        <div className="container-fluid">
-           
-            <form className="d-flex" role="search"onSubmit={handleSubmit}>
+        <div className="container-fluid" id="search-div">
+            <form role="search" id="searchForm" onSubmit={handleSubmit}>
 
                     <input 
                         className="form-control me-2"

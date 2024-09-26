@@ -1,5 +1,31 @@
 #searchForm{
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+    flex-direction: row;
+    align-items:flex-end;
+    width: 100%;
+}
+
+#searchTerm{
+    height: 38px;
+    padding-bottom: 0;
+}
+
+
+@media screen and (min-width: 768px){
+    #search-div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #searchForm{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #searchForm > button{
+        width: 20%;
+    }
 }

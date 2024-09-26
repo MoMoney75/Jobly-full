@@ -8,6 +8,25 @@ body {
 
 #jobly-logo{
   margin-top: 1em;
+  margin-bottom: 1em;
   background-color: lightgray;
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+
+}
+
+@media screen and (min-width: 768px) {
+  #jobly-logo {
+    margin-left: 0.7em;
+    margin-right: 0.7em
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  #jobly-logo {
+    margin-left: 0.8em;
+    margin-right: 0.8em
+  }
 
 }

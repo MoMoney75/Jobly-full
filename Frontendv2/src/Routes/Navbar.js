@@ -8,8 +8,8 @@ const { currentUser } = useContext(UserContext);
 
 function loggedInNav(){
   return(
-<div className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container">
+<div className="navbar navbar-expand-lg bg-body-tertiary" id="logged-in-nav">
+  <div className="container-fluid">
     <Link className="navbar-brand" to="/companies">Jobly</Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@ function loggedInNav(){
 
   function loggedOutNav(){
     return(
-      <div className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="navbar navbar-expand-lg bg-body-tertiary" id="logged-out-nav">
       <div className="container-fluid">
       <a className="navbar-brand" href="#">Jobly</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,0 +1,43 @@
+.nav-link:active{
+  background-color: rgb(108, 101, 101);
+}
+
+.navbar{
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 768px){
+    .navbar-brand{
+        font-size: 2.4em;
+    }    
+
+
+    .nav-link {
+        font-size: 1.2em;
+
+    }
+    .container-fluid {
+        margin-left: 2em;
+        margin-right: 0.7em;
+      }
+}
+
+@media screen and (min-width: 1024px){
+    .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .navbar-collapse {
+        flex-grow: 0;
+      }
+      
+      .navbar-nav {
+        display: flex;
+        gap: 20px;
+      }
+
+
+      
+}

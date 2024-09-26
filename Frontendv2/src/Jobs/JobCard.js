@@ -1,6 +1,7 @@
 import React, {useState,useContext} from "react";
 import UserContext from "../Context/UserContext";
 import {Link} from 'react-router-dom'
+import './JobsCard.css'
 
 function JobCard({jobData}){
   const { hasAppliedToJob, applyToJob } = useContext(UserContext);
@@ -17,7 +18,6 @@ function JobCard({jobData}){
     if (hasAppliedToJob(jobData.id)) return;
     applyToJob(jobData.id);
     setApplied(true);
-    console.log("successfully applied to job", jobData.id, applied)
   }
   return (
     <div id="company-div" className="container-fluid">
@@ -35,7 +35,7 @@ function JobCard({jobData}){
                   <p className="card-text">Equity not available</p> :    
                   <p className="card-text">Equity: {jobData.equity}</p>}
 
-                  <Link className="card-text h2" to={`/companies/${jobData.company.handle}`}>
+                  <Link id="company_link"className="card-text" to={`/companies/${jobData.company.handle}`}>
                     {jobData.company.name} 
                   </Link>
                 <p className="card-text h5">{jobData.company.description}</p>

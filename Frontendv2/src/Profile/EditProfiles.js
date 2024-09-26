@@ -33,8 +33,9 @@ function ProfileForm() {
 
     try {
       updatedUser = await JoblyApi.updateProfile(username, newData);
+      console.log("update user attempt:",updatedUser)
 
-    } catch (errors) {
+    } catch(errors) {
       setFormErrors(errors);
       return;
     }
@@ -62,6 +63,8 @@ function ProfileForm() {
         <h1 className="h5">Edit Profile</h1>
         </div>
             <form id="edit-form">
+              {formErrors && formErrors.map((e) => (
+                  <ul> <li>{e}</li></ul>))}
               <div className="mb-3">
                 <label htmlFor="firstName" className="form-label">First Name</label>
                 <input
@@ -112,8 +115,7 @@ function ProfileForm() {
                     onChange={handleChange}/>
                 </div>
 
-              {formErrors.length
-                  ? <p>{formErrors}</p> : null}
+              
 
               {saveConfirmed ? <p>updated successfull</p> : null}
 

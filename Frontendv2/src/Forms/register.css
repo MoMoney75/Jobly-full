@@ -1,16 +1,17 @@
 #error-div{
-    background-color:#f5364f ;
+    color:#f5364f ;
 }
 
 #reg-div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh; /* Make it full viewport height */
     width: 100%;
+    margin-top: 5em;
   }
 
    
   form > button {
-    width: 100%; /* Full width button */
+    width: 100%;
+    margin-top: 1em;
   }
