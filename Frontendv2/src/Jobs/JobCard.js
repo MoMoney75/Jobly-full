@@ -50,29 +50,6 @@ function JobCard({jobData}){
       </div>
     </div>
     );
-// return(
-// <div>
-// <h1>
-// {jobData.title}
-// </h1>
-// <h2>{jobData.company.name}</h2>
-// <p>{jobData.company.description}</p>
-// {jobData.salary === null ? 
-//             <p>Salary not available</p>
-//           :
-          
-//             <p>${jobData.salary}</p>
-//           }
-// {jobData.equity === null?  <p>Equity not available</p> :    
-//     <p>Equity: {jobData.equity}</p>}
-    
-    
-//     <button onClick={handleApply}
-//     disabled={applied}>  {applied ? "Applied" : "Apply" }</button>
-// </div>
-
-// )
-
 }
 
-export default JobCard
+export default JobCard;

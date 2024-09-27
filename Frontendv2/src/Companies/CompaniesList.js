@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import JoblyApi from "../API/JoblyAPI";
 import SearchForm from "../Forms/SearchForm";
-//import CompaniesCard from "./CompaniesCard";
 import './CompaniesList.css'
 import { Link } from "react-router-dom";
 
@@ -18,16 +17,14 @@ function CompaniesList() {
         try{
         let companies = await JoblyApi.getCompanies(name);
         if(companies.length > 0){
-        console.log("companies list:", companies)
         setCompanies(companies);}
         else{
           setMessage("No matches found, Please try searching for a different company")
         }
         }
 
-        catch(e){
+        catch(err){
           setMessage("Unable to search for companies, please try again ")
-            console.log("ERROR!!:", e)
         }
       }
     

@@ -1,23 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
-<<<<<<< HEAD
 function JobsCard({jobs}){
-  console.log("all jobs:", jobs)
 
     return(
         <div>
 
-=======
-import './JobsCard.css'
-function JobsCard({message, jobs}){
-    return(
-        <div>
-      <div className="page-header">
-        <h1 className="h3">Browse by job listings</h1>
-      </div> 
-      { message && message.length > 0 ? <div id="message"> <p>{message}</p> </div> : null}
-      <div id="all-jobs">
->>>>>>> cc7c624 (update(frontend): add files)
     {jobs && jobs.map(j => (
 
         <div className="row"> 
@@ -31,15 +18,8 @@ function JobsCard({message, jobs}){
             </div>
           </div>
         </div>
-<<<<<<< HEAD
     ))}
     </div>
-=======
-        
-    ))}
-    </div>
-    </div>
->>>>>>> cc7c624 (update(frontend): add files)
     )
 }
 

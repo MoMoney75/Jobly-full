@@ -14,13 +14,12 @@ function LoginForm({login}){
     async function handleSubmit(evt){
         evt.preventDefault();
         let result = await login(formData)
-        console.log("RESULT LOGIN:", result)
         if(result.success === true){
         navigate('/companies')
         }
         else{
                 setFormErrors(result.errors)
-    }        
+            }        
     }
 
     const handleChange = (evt) => {

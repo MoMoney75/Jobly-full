@@ -7,7 +7,6 @@ function JobsList() {
     const [jobs, setJobs] = useState(null)
     const [message, setMessage] = useState(null)
     useEffect(function getJobs() {
-        console.debug("JobsList useEffect getCJobs");
         searchJobs();
       }, []);
     
@@ -18,12 +17,10 @@ function JobsList() {
         setJobs(jobs)}
         else{
           setMessage("No matches found, please try searching for a different job")
-
         }
         }
 
         catch(e){
-          console.log("error while searching for job:", e)
           setMessage("Unable to find any jobs, please try again")
         }
       }

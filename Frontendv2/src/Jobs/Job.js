@@ -13,12 +13,11 @@ useEffect(() => {
     const getData = async()=> {
         try{
         const result = await JoblyApi.getJob(jobID)
-        console.log("JOB ID:", jobID)
         setJobData(result)
-        console.log(result)
+
         }
-        catch(e){
-            console.log("Error wile trying to get job data :",e)
+        catch(err){
+            console.log("Error wile trying to get job data :",err)
         }
     }
     getData();

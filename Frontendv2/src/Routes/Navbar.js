@@ -17,9 +17,6 @@ function loggedInNav(){
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
     <ul className="navbar-nav ms-auto">
-      <li className="nav-item" aria-current="page">
-        <Link className="nav-link" to="/">Home</Link>
-      </li>
 
       <li className="nav-item" aria-current="page">
         <Link className="nav-link" to="/companies">Companies</Link>

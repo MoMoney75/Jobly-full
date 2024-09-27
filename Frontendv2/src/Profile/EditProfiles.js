@@ -11,11 +11,10 @@ function ProfileForm() {
     username: currentUser.username,
     password: currentUser.password,
   });
-  const [formErrors, setFormErrors] = useState([]);
 
-  // switch to use our fancy limited-time-display message hook
+  const [formErrors, setFormErrors] = useState([]);
   const [saveConfirmed, setSaveConfirmed] = useState(false);
-  // const [saveConfirmed, setSaveConfirmed] = useTimedMessage()
+
 
 
   async function handleSubmit(evt) {
@@ -33,10 +32,9 @@ function ProfileForm() {
 
     try {
       updatedUser = await JoblyApi.updateProfile(username, newData);
-      console.log("update user attempt:",updatedUser)
 
-    } catch(errors) {
-      setFormErrors(errors);
+    } catch(err) {
+      setFormErrors(err);
       return;
     }
 

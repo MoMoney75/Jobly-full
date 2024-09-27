@@ -17,9 +17,7 @@ function RegisterForm({register}){
      async function handleSubmit(evt){
         evt.preventDefault();
         const result = await register(formData);
-        console.log("result:", result);
         if(result.success === false){
-            console.log(result.err)
             setErrors(result.err)
             setFormData(INITIAL_STATE)
             return;

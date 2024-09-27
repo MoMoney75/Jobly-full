@@ -15,8 +15,6 @@ if (process.env.NODE_ENV === "production") {
 } else {
   db = new Client({
     connectionString: getDatabaseUri()
-    // host: "/var/run/postgresql",
-    // database: 'jobly_react'
   });
 }
 

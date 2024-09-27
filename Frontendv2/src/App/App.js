@@ -9,7 +9,7 @@ import UserContext from '../Context/UserContext';
 import './App.css'
 
 function App() {
-  // eslint-disable-next-line
+  
   const [infoLoaded, setInfoLoaded] = useState(false);
   const [applicationIds, setApplicationIds] = useState(new Set([]));
   const [currentUser, setCurrentUser] = useState(null);
@@ -39,7 +39,7 @@ function App() {
           setCurrentUser(currentUser);
           setApplicationIds(new Set(currentUser.applications));
         } catch (err) {
-          console.error("App loadUserInfo: problem loading", err);
+
           setCurrentUser(null);
         }
       }
@@ -59,9 +59,8 @@ function App() {
       let token = await JoblyApi.login(loginData);
       setToken(token);
       return { success: true };
-    } catch (errors) {
-      console.error("login failed", errors);
-      return { success: false, errors };
+    } catch (err) {
+      return { success: false, err };
     }
   }
 
