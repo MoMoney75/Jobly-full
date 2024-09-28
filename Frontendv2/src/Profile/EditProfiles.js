@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import JoblyApi from "../API/JoblyAPI";
 import UserContext from "../Context/UserContext";
 import './EditProfile.css'
+import {useNavigate} from 'react-router-dom';
 function ProfileForm() {
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ function ProfileForm() {
     username: currentUser.username,
     password: currentUser.password,
   });
-
+  const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState([]);
   const [saveConfirmed, setSaveConfirmed] = useState(false);
 
@@ -32,7 +33,7 @@ function ProfileForm() {
 
     try {
       updatedUser = await JoblyApi.updateProfile(username, newData);
-
+      navigate('/companies')
     } catch(err) {
       setFormErrors(err);
       return;
@@ -56,13 +57,16 @@ function ProfileForm() {
   }
 
   return (
-      <div className="container">
+      <div className="container" id="edit-div">
         <div>
-        <h1 className="h5">Edit Profile</h1>
+          <h1 className="h5">Edit Profile</h1>
         </div>
-            <form id="edit-form">
+            <form>
+              <div id="errors-div">
               {formErrors && formErrors.map((e) => (
                   <ul> <li>{e}</li></ul>))}
+              </div>
+
               <div className="mb-3">
                 <label htmlFor="firstName" className="form-label">First Name</label>
                 <input
@@ -103,7 +107,7 @@ function ProfileForm() {
                 </div>
 
                 <div className="mb-3">
-                <label htmlFor="password" className="form-label">Confirm password</label>
+                <label htmlFor="password" className="form-label">Change password</label>
                 <input
                     className="form-control"
                     type="password"

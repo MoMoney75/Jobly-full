@@ -18,7 +18,8 @@ function LoginForm({login}){
         navigate('/companies')
         }
         else{
-                setFormErrors(result.errors)
+                setFormErrors(result.err)
+                setFormData(INITIAL_STATE)
             }        
     }
 
