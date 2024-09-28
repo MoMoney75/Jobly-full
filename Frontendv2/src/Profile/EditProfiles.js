@@ -107,7 +107,7 @@ function ProfileForm() {
                 </div>
 
                 <div className="mb-3">
-                <label htmlFor="password" className="form-label">Change password</label>
+                <label htmlFor="password" className="form-label">Change Password</label>
                 <input
                     className="form-control"
                     type="password"
