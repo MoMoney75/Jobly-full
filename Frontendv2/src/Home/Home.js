@@ -13,7 +13,13 @@ function Home({login}){
 
 
         return(
-            <div id="home-div">
+            <div>
+                <div id="header">
+                    <h1 className="h2">
+                        Welcome to Jobly
+                        <p>Begin your job search today!</p>
+                    </h1>
+                </div>
                 { !user && <LoginForm login={login}/> }
             </div>)
 

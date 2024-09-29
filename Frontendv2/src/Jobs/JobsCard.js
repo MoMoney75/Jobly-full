@@ -1,9 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom"
-function JobsCard({jobs}){
+function JobsCard({jobs, message}){
 
     return(
         <div>
+
+    <div className="page-header">
+      <h1 className="h3">Browse by job title</h1>
+      </div> 
+
+          {message && message.length > 0 ? <p id="message">{message}</p> : null}
 
     {jobs && jobs.map(j => (
 

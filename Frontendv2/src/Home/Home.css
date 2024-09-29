@@ -17,3 +17,8 @@ h1{
     justify-content: center;
     flex-direction: column;
 }
+
+#header{
+    margin-top: 2em;
+    margin-bottom: 0;
+}

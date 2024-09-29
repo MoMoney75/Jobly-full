@@ -19,7 +19,7 @@ function CompaniesList() {
         if(companies.length > 0){
         setCompanies(companies);}
         else{
-          setMessage("No matches found, Please try searching for a different company")
+          setMessage("No matches found")
         }
         }
 

@@ -14,12 +14,13 @@ function JobsList() {
         try{
         let jobs = await JoblyApi.getJobs(title);
         if(jobs.length > 0){
-        setJobs(jobs)}
-        else{
-          setMessage("No matches found, please try searching for a different job")
-        }
+        setJobs(jobs)
         }
 
+        else{
+          setMessage("No matches found")
+        }
+        }
         catch(e){
           setMessage("Unable to find any jobs, please try again")
         }

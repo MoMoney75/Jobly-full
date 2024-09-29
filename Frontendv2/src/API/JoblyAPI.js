@@ -7,8 +7,7 @@ class JoblyApi {
   static token;
 
   static async request(endpoint, data = {}, method = "get") {
-    console.debug("API Call:", endpoint, data, method);
-
+    //console.debug("API Call:", endpoint, data, method);
 
     const url = `${BASE_URL}/${endpoint}`;
     const headers = { Authorization: `Bearer ${JoblyApi.token}` };
@@ -19,7 +18,7 @@ class JoblyApi {
     try {
       return (await axios({ url, method, data, params, headers })).data;
     } catch (err) {
-      console.error("API Error:", err.response);
+      //console.error("API Error:", err.response);
       let message = err.response.data.error.message;
       throw Array.isArray(message) ? message : [message];
     }
@@ -53,10 +52,8 @@ class JoblyApi {
 
 
   static async register(data){
-
       let res = await this.request('auth/register',data,"post");
-
-        return res.token;
+      return res.token;
 
     }
 
@@ -72,6 +69,7 @@ class JoblyApi {
 
     static async applyToJob(username,id){
       let res = await this.request(`users/${username}/jobs/${id}`, {}, 'post');
+      return res;
     }
 
     static async updateProfile(username,data){
