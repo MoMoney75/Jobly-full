@@ -1,7 +1,7 @@
 # Welcome to Jobly!  
 
 ## Overview  
-Jobly is a job search application that offers a complete user profile, including profile editing, authentication, and authorization. Once registered, users can browse open positions across various companies and search for jobs by company names.  
+Jobly is a job search application that offers a complete user profile, including profile editing, authentication, and authorization. Once registered, users can browse open positions across various companies and search for jobs by company names. You can try Jobly at https://jobly-express.surge.sh/
 
 Our **Quick Apply** feature allows users to apply swiftly, saving valuable time. Applied jobs are marked as **"Applied"** to prevent duplicate applications for the same position.  
 
